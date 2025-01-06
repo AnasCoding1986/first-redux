@@ -12,12 +12,15 @@ import {
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
 } from "@/components/ui/form";
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
 import {
   Select,
   SelectContent,
@@ -70,28 +73,20 @@ export function AddTaskModal() {
             />
             <FormField
               control={form.control}
-              name="Description"
+              name="description"
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>Description</FormLabel>
                   <FormControl>
-                    <Textarea></Textarea>
+                    <Textarea
+                      {...field}
+                      placeholder="Enter the task description"
+                    />
                   </FormControl>
                 </FormItem>
               )}
             />
-            <FormField
-              control={form.control}
-              name="dueDate"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Duse Date</FormLabel>
-                  <FormControl>
-                    <Textarea></Textarea>
-                  </FormControl>
-                </FormItem>
-              )}
-            />
+
             <FormField
               control={form.control}
               name="priority"
@@ -157,7 +152,7 @@ export function AddTaskModal() {
               )}
             />
             <DialogFooter>
-              <Button type="submit">Save for module 25 changes</Button>
+              <Button type="submit">Save changes</Button>
             </DialogFooter>
           </form>
         </Form>
