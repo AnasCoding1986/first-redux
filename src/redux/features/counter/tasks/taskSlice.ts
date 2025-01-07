@@ -18,7 +18,6 @@ const initialState: InitialState = {
       isCompleted: false,
       priority: "high",
     },
-    
   ],
   filter: "all",
 };
@@ -42,6 +41,9 @@ const taskSlice = createSlice({
         task.isCompleted = !task.isCompleted;
       }
     },
+    deleteTask: (state, action: PayloadAction<string>) => {
+      state.tasks = state.tasks.filter((task) => task.id !== action.payload);
+    },
   },
 });
 
@@ -53,6 +55,6 @@ export const selectFilter = (state: RootState) => {
   return state.todo.filter;
 };
 
-export const { addTask, toggleCompleteState } = taskSlice.actions;
+export const { addTask, toggleCompleteState, deleteTask } = taskSlice.actions;
 
 export default taskSlice.reducer;
