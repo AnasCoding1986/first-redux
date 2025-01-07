@@ -30,6 +30,8 @@ import {
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { cn } from "@/lib/utils";
+import { addTask } from "@/redux/features/counter/tasks/taskSlice";
+import { useAppDispatch } from "@/redux/hook";
 import { format } from "date-fns";
 import { CalendarIcon } from "lucide-react";
 import { useForm } from "react-hook-form";
@@ -37,8 +39,11 @@ import { useForm } from "react-hook-form";
 export function AddTaskModal() {
   const form = useForm();
 
+  const disPatch = useAppDispatch();
+
   const onSubmit = (data) => {
     console.log(data);
+    disPatch(addTask(data));
   };
 
   return (
@@ -61,7 +66,7 @@ export function AddTaskModal() {
           >
             <FormField
               control={form.control}
-              name="Title"
+              name="title"
               render={({ field }) => (
                 <FormItem>
                   <FormLabel className="mr-3">Task Title</FormLabel>

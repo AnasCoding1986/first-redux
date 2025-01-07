@@ -4,5 +4,5 @@ export interface ITask  {
     description: string; // Description of the task
     dueDate: string; // Due date in "YYYY-MM" format
     isCompleted: boolean; // Completion status of the task
-    priority: "High" | "Medium" | "Low"; // Priority of the task
+    priority: "high" | "medium" | "low"; // Priority of the task
 };
