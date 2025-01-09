@@ -13,7 +13,7 @@ const initialState: InitialState = {
     {
       id: "1",
       title: "Finish Project Report",
-      description: "Complete the final report for the Q4 project.",
+      description: "Complete the final report continuing github for the Q4 project.",
       dueDate: "2025-01",
       isCompleted: false,
       priority: "high",
