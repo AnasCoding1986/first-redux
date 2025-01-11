@@ -6,3 +6,8 @@ export interface ITask  {
     isCompleted: boolean; // Completion status of the task
     priority: "high" | "medium" | "low"; // Priority of the task
 };
+
+export interface IUser {
+    id:string;
+    name:string;
+}
